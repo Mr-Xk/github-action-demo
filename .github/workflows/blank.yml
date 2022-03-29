@@ -31,7 +31,7 @@ jobs:
           php-version: '8.1'
 
       - name: run a php script generate a html file
-          run: php ./demo.php
+        run: php ./demo.php
 
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
