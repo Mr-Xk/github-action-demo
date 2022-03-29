@@ -30,6 +30,9 @@ jobs:
         with:
           php-version: '8.1'
 
+      - name: run a php script generate a html file
+          run: php ./demo.php
+
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -44,10 +47,10 @@ jobs:
           # Required mail subject:
           subject: Send Email Everyday
           # Required recipients' addresses:
-          to: 948044257@qq.com
+          to: php@tradeplus.cc
           # Required sender full name (address can be skipped):
           from: 许凯 # <user@example.com>
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
-          # Optional plain body:
-          body: Build job of ${{github.repository}} completed successfully!
+          # Optional HTML body read from file:
+          html_body: file://email.html
